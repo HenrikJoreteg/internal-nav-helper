@@ -1,0 +1,37 @@
+{
+  "name": "internal-nav-helper",
+  "description": "Helper function for handling internal navigation in Single Page Apps (SPAs) in ~250 bytes before gzip.",
+  "version": "0.0.0",
+  "author": "Henrik Joreteg <henrik@joreteg.com> (joreteg.com)",
+  "bugs": {
+    "url": "https://github.com/henrikjoreteg/internal-nav-helper/issues"
+  },
+  "devDependencies": {
+    "microbundle": "0.4.1",
+    "prettier": "1.10.2",
+    "tape": "4.8.0"
+  },
+  "homepage": "https://github.com/henrikjoreteg/internal-nav-helper",
+  "keywords": [
+    "navigation",
+    "preact",
+    "react",
+    "redux-bundler",
+    "router",
+    "routing",
+    "spa"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.m.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henrikjoreteg/internal-nav-helper"
+  },
+  "scripts": {
+    "build": "prettier --write README.md src/* test.js && microbundle && npm test",
+    "start": "microbundle watch",
+    "test": "tape test.js"
+  },
+  "source": "src/index.js"
+}
