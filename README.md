@@ -1,6 +1,6 @@
-# nav-helper
+# internal-nav-helper
 
-![](https://img.shields.io/npm/dm/nav-helper.svg)![](https://img.shields.io/npm/v/nav-helper.svg)![](https://img.shields.io/npm/l/nav-helper.svg)
+![](https://img.shields.io/npm/dm/internal-nav-helper.svg)![](https://img.shields.io/npm/v/internal-nav-helper.svg)![](https://img.shields.io/npm/l/internal-nav-helper.svg)
 
 Helper function for handling internal navigation in Single Page Apps (SPAs) in ~250 bytes before gzip.
 
@@ -22,7 +22,7 @@ It works by examining the event and event target. First it makes sure this was a
 ## install
 
 ```
-npm install nav-helper
+npm install internal-nav-helper
 ```
 
 ## example
@@ -32,7 +32,7 @@ This works with any framework it's just inspecting DOM events. But I like Preact
 ```js
 import { h } from 'preact'
 import { connect } from 'redux-bundler-connect'
-const navHelper = require('nav-helper')
+const navHelper = require('internal-nav-helper')
 
 const RootComponent = ({ doUpdateUrl }) => (
   <div onClick={navHelper(doUpdateUrl)}>
