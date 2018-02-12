@@ -1,7 +1,7 @@
 {
   "name": "internal-nav-helper",
   "description": "Helper function for handling internal navigation in Single Page Apps (SPAs) in ~250 bytes before gzip.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Henrik Joreteg <henrik@joreteg.com> (joreteg.com)",
   "bugs": {
     "url": "https://github.com/henrikjoreteg/internal-nav-helper/issues"
