@@ -4,7 +4,9 @@ const findA = el => {
 }
 
 const getLocalPathname = a =>
-  a.origin === location.origin ? a.href.replace(location.origin, '') : null
+  a.href.indexOf(location.protocol + '//' + location.host) !== -1
+    ? a.href.split(location.host, 2)[1]
+    : null
 
 export default onInternalNav => e => {
   if (e.button === 0 && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {

@@ -54,6 +54,10 @@ const RootComponent = ({ doUpdateUrl }) => (
 export default connect('doUpdateUrl', RootComponent)
 ```
 
+## changelog
+
+* `1.0.2` fixed issues in IE.
+
 ## credits
 
 If you like this follow [@HenrikJoreteg](http://twitter.com/henrikjoreteg) on twitter.

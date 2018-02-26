@@ -1,30 +1,27 @@
 const test = require('tape')
 const navHelper = require('./')
 
-const baseOrigin = 'http://example.com'
+const baseHost = 'example.com'
 
-const setOrigin = origin => {
-  global.location = { origin }
+const setHost = host => {
+  global.location = { host, protocol: 'http:' }
 }
 
 const getTarget = ({
   tagName = 'A',
   href = 'http://example.com/hi',
-  origin = baseOrigin,
   other
 } = {}) =>
   Object.assign(
     {
       tagName,
       href,
-      origin,
       parentElement: {}
     },
     other
   )
 
 const getEvent = ({
-  origin = baseOrigin,
   href = 'http://example.com/hi',
   tagName = 'A',
   button = 0,
@@ -35,13 +32,14 @@ const getEvent = ({
     {
       preventDefault: () => {},
       button: 0,
-      target: target || getTarget({ tagName, href, origin })
+      target: target || getTarget({ tagName, href })
     },
     other
   )
 
 test('test nav helper', t => {
-  setOrigin(baseOrigin)
+  t.plan(3)
+  setHost(baseHost)
   let called = 0
   const fn = navHelper(url => {
     called++
@@ -59,7 +57,6 @@ test('test nav helper', t => {
     t.fail('should never get here')
   })
   // these things *should not* result in callbacks
-  fn(getEvent({ origin: 'something' }))
   fn(getEvent({ tagName: 'SPAN' }))
   fn(getEvent({ other: { altKey: true } }))
   fn(getEvent({ target: getTarget({ other: { target: '_blank' } }) }))
@@ -78,5 +75,5 @@ test('test nav helper', t => {
       }
     })
   )
-  fn(getEvent({ href: baseOrigin + '/done' }))
+  fn(getEvent({ href: 'http://' + baseHost + '/done' }))
 })
