@@ -16,7 +16,8 @@ const getTarget = ({
     {
       tagName,
       href,
-      parentElement: {}
+      parentElement: {},
+      getAttribute: () => {}
     },
     other
   )
@@ -38,7 +39,7 @@ const getEvent = ({
   )
 
 test('test nav helper', t => {
-  t.plan(3)
+  t.plan(4)
   setHost(baseHost)
   let called = 0
   const fn = navHelper(url => {
@@ -50,6 +51,9 @@ test('test nav helper', t => {
       t.equal(url, '/hi')
       return
     } else if (called === 3) {
+      t.equal(url, '/hi')
+      return
+    } else if (called === 4) {
       t.equal(url, '/done')
       t.end()
       return
@@ -61,6 +65,15 @@ test('test nav helper', t => {
   fn(getEvent({ other: { altKey: true } }))
   fn(getEvent({ target: getTarget({ other: { target: '_blank' } }) }))
   fn(getEvent({ target: getTarget({ other: { target: '_external' } }) }))
+  fn(
+    getEvent({
+      target: getTarget({
+        other: {
+          getAttribute: () => 'false'
+        }
+      })
+    })
+  )
 
   // the following *should* result in callbacks
   fn(getEvent())
@@ -73,6 +86,15 @@ test('test nav helper', t => {
           }
         }
       }
+    })
+  )
+  fn(
+    getEvent({
+      target: getTarget({
+        other: {
+          getAttribute: () => 'true'
+        }
+      })
     })
   )
   fn(getEvent({ href: 'http://' + baseHost + '/done' }))
