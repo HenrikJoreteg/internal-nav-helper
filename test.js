@@ -16,7 +16,8 @@ const getTarget = ({
     {
       tagName,
       href,
-      parentElement: {}
+      parentElement: {},
+      hasAttribute: name => !!(other && other[name])
     },
     other
   )
@@ -24,7 +25,6 @@ const getTarget = ({
 const getEvent = ({
   href = 'http://example.com/hi',
   tagName = 'A',
-  button = 0,
   target,
   other
 } = {}) =>
@@ -61,7 +61,7 @@ test('test nav helper', t => {
   fn(getEvent({ other: { altKey: true } }))
   fn(getEvent({ target: getTarget({ other: { target: '_blank' } }) }))
   fn(getEvent({ target: getTarget({ other: { target: '_external' } }) }))
-  fn(getEvent({ download: 'file.csv' }))
+  fn(getEvent({ target: getTarget({ other: { download: 'file.csv' } }) }))
 
   // the following *should* result in callbacks
   fn(getEvent())

@@ -51,12 +51,16 @@ const RootComponent = ({ doUpdateUrl }) => (
   </div>
 )
 
-export default connect('doUpdateUrl', RootComponent)
+export default connect(
+  'doUpdateUrl',
+  RootComponent
+)
 ```
 
 ## changelog
 
-* `1.0.2` fixed issues in IE.
+- `1.1.0` now ignores links with `download` attribute (thanks [@huygn](https://github.com/huygn)). Updated dependencies. Removed sourcemaps (seemed unnecessary).
+- `1.0.2` fixed issues in IE.
 
 ## credits
 

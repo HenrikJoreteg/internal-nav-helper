@@ -7,9 +7,9 @@
     "url": "https://github.com/henrikjoreteg/internal-nav-helper/issues"
   },
   "devDependencies": {
-    "microbundle": "0.4.1",
-    "prettier": "1.10.2",
-    "tape": "4.8.0"
+    "microbundle": "0.7.0",
+    "prettier": "1.15.1",
+    "tape": "4.9.1"
   },
   "homepage": "https://github.com/henrikjoreteg/internal-nav-helper",
   "keywords": [
@@ -29,7 +29,7 @@
     "url": "https://github.com/henrikjoreteg/internal-nav-helper"
   },
   "scripts": {
-    "build": "prettier --write README.md src/* test.js && microbundle && npm test",
+    "build": "prettier --write README.md src/* test.js && microbundle --sourcemap false && npm test",
     "start": "microbundle watch",
     "test": "tape test.js"
   },

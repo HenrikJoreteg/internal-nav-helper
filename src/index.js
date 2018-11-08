@@ -11,6 +11,7 @@ const getLocalPathname = a =>
 export default onInternalNav => e => {
   if (e.button === 0 && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
     const aTag = findA(e.target)
+
     if (
       aTag &&
       aTag.target !== '_blank' &&
