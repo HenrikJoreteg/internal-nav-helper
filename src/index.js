@@ -11,7 +11,12 @@ const getLocalPathname = a =>
 export default onInternalNav => e => {
   if (e.button === 0 && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
     const aTag = findA(e.target)
-    if (aTag && aTag.target !== '_blank' && aTag.target !== '_external') {
+    if (
+      aTag &&
+      aTag.target !== '_blank' &&
+      aTag.target !== '_external' &&
+      !aTag.hasAttribute('download')
+    ) {
       const url = getLocalPathname(aTag)
       if (url) {
         e.preventDefault()
