@@ -59,6 +59,7 @@ export default connect(
 
 ## changelog
 
+- `1.2.0` now exposes its internal `findAnchorTag` method.
 - `1.1.0` now ignores links with `download` attribute (thanks [@huygn](https://github.com/huygn)). Updated dependencies. Removed sourcemaps (seemed unnecessary).
 - `1.0.2` fixed issues in IE.
 

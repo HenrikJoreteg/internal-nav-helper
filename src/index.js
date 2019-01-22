@@ -1,6 +1,6 @@
-const findA = el => {
+export const findAnchorTag = el => {
   if (!el) return null
-  return el.tagName === 'A' ? el : findA(el.parentElement)
+  return el.tagName === 'A' ? el : findAnchorTag(el.parentElement)
 }
 
 const getLocalPathname = a =>
@@ -10,7 +10,7 @@ const getLocalPathname = a =>
 
 export default onInternalNav => e => {
   if (e.button === 0 && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
-    const aTag = findA(e.target)
+    const aTag = findAnchorTag(e.target)
 
     if (
       aTag &&
