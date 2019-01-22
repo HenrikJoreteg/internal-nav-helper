@@ -32,10 +32,10 @@ This works with any framework it's just inspecting DOM events. But I like Preact
 ```js
 import { h } from 'preact'
 import { connect } from 'redux-bundler-connect'
-const navHelper = require('internal-nav-helper')
+import { getNavHelper } from 'internal-nav-helper'
 
 const RootComponent = ({ doUpdateUrl }) => (
-  <div onClick={navHelper(doUpdateUrl)}>
+  <div onClick={getNavHelper(doUpdateUrl)}>
     <h1>Your app</h1>
     <a href="/something">Some internal link will be handled</a>
     <a href="/other" target="_blank">
@@ -59,8 +59,7 @@ export default connect(
 
 ## changelog
 
-- `2.0.2` um... make sure right files are actually published :facepalm:
-- `2.0.0` non-module version of index.js file now exposes sub-exports. Updated microbundle to latest.
+- `3.0.0` changing how second internal function is exposed. Updated microbundle to latest. (fumbled 2.x deploys, bumping major incase someone happened to install 2.x)
 - `1.2.0` now exposes its internal `findAnchorTag` method.
 - `1.1.0` now ignores links with `download` attribute (thanks [@huygn](https://github.com/huygn)). Updated dependencies. Removed sourcemaps (seemed unnecessary).
 - `1.0.2` fixed issues in IE.

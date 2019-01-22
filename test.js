@@ -1,5 +1,5 @@
 const test = require('tape')
-const navHelper = require('./dist').default
+const getNavHelper = require('./dist').getNavHelper
 
 const baseHost = 'example.com'
 
@@ -41,7 +41,7 @@ test('test nav helper', t => {
   t.plan(3)
   setHost(baseHost)
   let called = 0
-  const fn = navHelper(url => {
+  const fn = getNavHelper(url => {
     called++
     if (called === 1) {
       t.equal(url, '/hi')

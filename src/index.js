@@ -8,7 +8,7 @@ const getLocalPathname = a =>
     ? a.href.split(location.host, 2)[1]
     : null
 
-export default onInternalNav => e => {
+export const getNavHelper = onInternalNav => e => {
   if (e.button === 0 && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey) {
     const aTag = findAnchorTag(e.target)
 
