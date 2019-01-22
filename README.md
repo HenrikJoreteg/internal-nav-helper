@@ -59,6 +59,7 @@ export default connect(
 
 ## changelog
 
+- `2.0.2` um... make sure right files are actually published :facepalm:
 - `2.0.0` non-module version of index.js file now exposes sub-exports. Updated microbundle to latest.
 - `1.2.0` now exposes its internal `findAnchorTag` method.
 - `1.1.0` now ignores links with `download` attribute (thanks [@huygn](https://github.com/huygn)). Updated dependencies. Removed sourcemaps (seemed unnecessary).

@@ -29,6 +29,9 @@
     "type": "git",
     "url": "https://github.com/henrikjoreteg/internal-nav-helper"
   },
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "build": "prettier --write README.md src/* test.js && microbundle --no-sourcemap --no-compress && npm test",
     "start": "microbundle watch",
