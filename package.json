@@ -22,8 +22,9 @@
     "spa"
   ],
   "license": "MIT",
-  "main": "index.js",
-  "module": "index.m.js",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/henrikjoreteg/internal-nav-helper"

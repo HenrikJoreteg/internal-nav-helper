@@ -1,5 +1,5 @@
 const test = require('tape')
-const navHelper = require('./').default
+const navHelper = require('./dist').default
 
 const baseHost = 'example.com'
 
