@@ -16,6 +16,7 @@ export const getNavHelper = onInternalNav => e => {
       aTag &&
       aTag.target !== '_blank' &&
       aTag.target !== '_external' &&
+      aTag.rel !== 'external' &&
       !aTag.hasAttribute('download')
     ) {
       const url = getLocalPathname(aTag)

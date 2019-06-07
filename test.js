@@ -61,6 +61,7 @@ test('test nav helper', t => {
   fn(getEvent({ other: { altKey: true } }))
   fn(getEvent({ target: getTarget({ other: { target: '_blank' } }) }))
   fn(getEvent({ target: getTarget({ other: { target: '_external' } }) }))
+  fn(getEvent({ target: getTarget({ other: { rel: 'external' } }) }))
   fn(getEvent({ target: getTarget({ other: { download: 'file.csv' } }) }))
 
   // the following *should* result in callbacks

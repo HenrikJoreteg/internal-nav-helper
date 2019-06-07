@@ -59,6 +59,7 @@ export default connect(
 
 ## changelog
 
+- `3.1.0` now ignores `rel="external"` closes [#3](https://github.com/HenrikJoreteg/internal-nav-helper/issues/3). Updated to latest microbundle.
 - `3.0.0` changing how second internal function is exposed. Updated microbundle to latest. (fumbled 2.x deploys, bumping major incase someone happened to install 2.x)
 - `1.2.0` now exposes its internal `findAnchorTag` method.
 - `1.1.0` now ignores links with `download` attribute (thanks [@huygn](https://github.com/huygn)). Updated dependencies. Removed sourcemaps (seemed unnecessary).
